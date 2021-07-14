@@ -11,4 +11,4 @@ RUN chmod +x ./Archi
 COPY plugins/* plugins
 RUN mkdir /source
 RUN mkdir /target
-ENTRYPOINT xvfb-run ./Archi -application com.archimatetool.commandline.app -consoleLog -nosplash --options --loadModel "/source/.git/temp.archimate" --html.createReport "/target"
+ENTRYPOINT xvfb-run ./Archi -application com.archimatetool.commandline.app -consoleLog -nosplash --options --modelrepository.loadModel "/source" --html.createReport "/target"
