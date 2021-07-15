@@ -4,4 +4,4 @@ Docker container that will output a html report for an archi model made with coA
 > https://github.com/archimatetool/archi/wiki/Archi-Command-Line-Interface
 
 ## Usage
-docker run -v /my/repo/directory:/source -v /my/output/directory:/target yoerivd/co-archi-report-generator:4.8.1
+`docker run -v /my/repo/directory:/source -v /my/output/directory:/target yoerivd/co-archi-report-generator:4.8.1`
