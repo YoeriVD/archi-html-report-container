@@ -12,7 +12,6 @@ WORKDIR Archi
 RUN chmod +x ./Archi
 RUN rm -rf plugins/com.archimatetool.reports_4.8.1.202101181039/templates
 COPY archi-html-report/ plugins/com.archimatetool.reports_4.8.1.202101181039/templates/
-RUN ls -al plugins/com.archimatetool.reports_4.8.1.202101181039/templates
 COPY plugins/* plugins
 RUN mkdir /source
 RUN mkdir /target
