@@ -131,16 +131,16 @@ var hints = {
 	CanvasModelSticky: "canvas_sticky.html",
 };
 
-$(document).ready(function() {
+$(window).on('load', function() {
 	// Set heigh of panels the first time
 	setRootPanelHeight();
-	
+
 	// Compute panel height on resize
 	$(window).resize(function (e) {
 		setRootPanelHeight();
 		e.stopPropagation();
 	});
-	
+
 	// Create links in this class
     $('.convertlinks').each(function() {
         $(this).html(createLinks($(this).text()));
@@ -151,7 +151,7 @@ $(document).ready(function() {
 		if (document.getElementById('hint-'+id) != null)
 			document.getElementById('hint-'+id).href = "../../hints/"+hints[id];
 	}
-	
+
 	// Sort 'elements' and 'properties' tables
 	var tabElements = $('#elements > table > tbody');
 	var tabElementsRows = tabElements.children('tr');
@@ -159,7 +159,7 @@ $(document).ready(function() {
 	var tabProperties = $('#properties > table > tbody');
 	var tabPropertiesRows = tabProperties.children('tr');
 	tabPropertiesRows.sort(strcmp).appendTo(tabProperties);
-	
+
 	const type = document.location.href.split('/').slice(-2, -1).pop();
 	if (type == "views") {
 		// *** DEEP LINKS ***
@@ -178,10 +178,10 @@ $(document).ready(function() {
 			<div class="col-xs-7"><input type="range" min="100" max="400" value="100" id="zoomRange"></div> \
 			<div class="col-xs-1" id="btnZoomIn"><span class="glyphicon glyphicon-plus"></span></div> \
 		</div>';
-		
+
 		// Inject slider widget
 		document.getElementsByClassName("panel-heading")[0].innerHTML += sliderHtml;
-		
+
 		// Get reference to slider and image
 		var slider = document.getElementById("zoomRange");
 		let img = document.getElementsByClassName("diagram")[0];
@@ -194,10 +194,10 @@ $(document).ready(function() {
 			imageMapResize();
 			window.focus();
 		}
-		
+
 		// Internet Explorer doesn't trigger input events so we have to hook on the change event
 		slider.onchange = setZoom;
-		
+
 		// Other browser should work
 		slider.oninput = setZoom;
 
