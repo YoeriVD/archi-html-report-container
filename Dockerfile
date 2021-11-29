@@ -12,5 +12,4 @@ RUN chmod +x ./Archi
 COPY dropins/* dropins/
 RUN mkdir /source
 RUN mkdir /target
-# ENTRYPOINT xvfb-run ./Archi -application com.archimatetool.commandline.app -consoleLog -nosplash --options --modelrepository.loadModel "/source" --html.createReport "/target"
-ENTRYPOINT sh
+ENTRYPOINT xvfb-run ./Archi -application com.archimatetool.commandline.app -consoleLog -nosplash --options --modelrepository.loadModel "/source" --html.createReport "/target"
