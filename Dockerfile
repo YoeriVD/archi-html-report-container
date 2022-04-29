@@ -3,7 +3,7 @@ from ubuntu:focal
 
 RUN apt update && apt -y install libgtk3.0-cil xvfb
 
-COPY Archi-Linux64-4.9.1.tgz archi.tgz
+COPY Archi-Linux64-4.9.3.tgz archi.tgz
 RUN tar zxvf archi.tgz
 
 WORKDIR Archi
