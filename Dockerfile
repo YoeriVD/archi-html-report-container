@@ -1,4 +1,4 @@
-from ubuntu:focal
+from ubuntu:jammy
 
 
 RUN apt update && apt -y install libgtk3.0-cil xvfb
